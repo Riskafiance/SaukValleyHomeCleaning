@@ -328,6 +328,134 @@
     border-bottom:1px solid var(--sky-light); padding-bottom:2px;
   }
 
+  /* ---------- reviews ---------- */
+  #reviews{
+    position:relative;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(127,188,239,0.22), transparent 42%),
+      radial-gradient(circle at 88% 82%, rgba(62,143,217,0.16), transparent 45%),
+      var(--navy-deep);
+    overflow:hidden;
+  }
+  #reviews::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:64px 64px;
+    pointer-events:none;
+  }
+  #reviews .wrap{position:relative;}
+  #reviews .section-head .tag{color:var(--sky-light);}
+  #reviews .section-head h2{color:#fff;}
+  #reviews .section-head p{color:#B9D3ED;}
+
+  .reviews-wrap{
+    display:grid; grid-template-columns:0.85fr 1.15fr; gap:44px; align-items:flex-start;
+  }
+  @media(max-width:860px){ .reviews-wrap{grid-template-columns:1fr;} }
+
+  .review-form-card{
+    position:relative;
+    background:linear-gradient(180deg, #ffffff, #FBFDFF);
+    border-radius:22px;
+    padding:36px 34px;
+    box-shadow:0 30px 60px -20px rgba(3,12,26,0.55), 0 1px 0 rgba(255,255,255,0.6) inset;
+    border-top:3px solid var(--sky);
+  }
+  .review-form-card h3{
+    font-size:1.35rem;
+    margin-bottom:6px;
+    letter-spacing:-0.01em;
+  }
+  .review-form-card .form-sub{
+    color:var(--ink-soft); font-size:0.92rem; margin:0 0 22px;
+  }
+  .review-form-card label{
+    display:block; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--ink-soft); margin-bottom:8px; font-weight:600;
+  }
+  .review-form-card input, .review-form-card textarea{
+    width:100%; padding:13px 15px;
+    border:1px solid var(--line); border-radius:12px;
+    font-family:'Work Sans', sans-serif; font-size:0.98rem;
+    background:#fff; color:var(--ink);
+    transition:border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .review-form-card input:focus, .review-form-card textarea:focus{
+    outline:none; border-color:var(--sky);
+    box-shadow:0 0 0 4px rgba(62,143,217,0.15);
+  }
+  .review-form-card textarea{resize:vertical; min-height:100px;}
+  .review-form-card .field{margin-bottom:20px;}
+
+  .star-picker{display:flex; gap:4px; margin-bottom:4px;}
+  .star-picker button{
+    background:none; border:none; cursor:pointer; padding:2px;
+    font-size:2.1rem; line-height:1; color:#DCE7F2;
+    text-shadow:0 1px 1px rgba(15,42,74,0.06);
+    transition:color 0.15s ease, transform 0.15s ease;
+  }
+  .star-picker button.filled{
+    color:#F0AC2A;
+    text-shadow:0 2px 6px rgba(240,172,42,0.45);
+  }
+  .star-picker button:hover{transform:scale(1.15) rotate(-4deg);}
+
+  .review-form-card .btn-primary{
+    width:100%; justify-content:center;
+    background:linear-gradient(135deg, var(--sky), var(--navy-mid));
+    box-shadow:0 14px 26px -10px rgba(23,69,111,0.55);
+    letter-spacing:0.01em;
+  }
+  .review-form-card .btn-primary:hover{background:linear-gradient(135deg, var(--navy-mid), var(--navy));}
+
+  .review-list{
+    display:flex; flex-direction:column; gap:20px;
+    max-height:600px; overflow-y:auto; padding:4px 6px 4px 2px;
+  }
+  .review-list::-webkit-scrollbar{width:6px;}
+  .review-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.18); border-radius:10px;}
+
+  .review-card{
+    position:relative;
+    background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:18px;
+    padding:26px 28px 24px 30px;
+    backdrop-filter:blur(6px);
+    transition:transform 0.2s ease, border-color 0.2s ease;
+  }
+  .review-card:hover{transform:translateY(-2px); border-color:rgba(127,188,239,0.4);}
+  .review-card::before{
+    content:"\201C";
+    position:absolute; top:12px; left:8px;
+    font-family:'Fraunces', serif;
+    font-size:3.4rem; line-height:1;
+    color:rgba(127,188,239,0.28);
+    pointer-events:none;
+  }
+  .review-card .stars{color:#F0AC2A; font-size:0.95rem; margin-bottom:10px; letter-spacing:3px;}
+  .review-card .r-top{display:flex; align-items:center; gap:10px; margin-bottom:2px;}
+  .review-card .r-avatar{
+    width:34px; height:34px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(135deg, var(--sky), var(--sky-light));
+    color:#fff; font-family:'Fraunces',serif; font-weight:600; font-size:0.95rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .review-card .r-name{font-family:'Fraunces',serif; font-weight:600; font-size:1.04rem; color:#fff;}
+  .review-card .r-date{color:#8FADCB; font-size:0.78rem; display:block;}
+  .review-card .r-comment{
+    color:#D9E7F5; margin:12px 0 0; font-size:0.98rem; line-height:1.65;
+    font-style:italic;
+  }
+
+  .review-empty, .review-status{color:#B9D3ED; font-size:0.95rem;}
+  .review-status.error{color:#F0A090; font-weight:500;}
+  .review-status.success{color:#8BE3B4; font-weight:500;}
+  #reviews .review-empty{color:#8FADCB;}
+
   /* ---------- contact ---------- */
   .contact-wrap{
     display:grid; grid-template-columns:1fr 1fr; gap:60px;
@@ -469,6 +597,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
+      <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -585,6 +714,54 @@
     </div>
   </section>
 
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">what clients say</span>
+        <h2>Real reviews, straight from clients.</h2>
+        <p>Leave a review below — it shows up here for every visitor, right after you submit it.</p>
+      </div>
+
+      <div class="reviews-wrap">
+        <!-- Leave a review -->
+        <div class="review-form-card">
+          <h3>Leave a review</h3>
+          <p class="form-sub">Tell other Sauk Valley families about your experience.</p>
+          <form id="reviewForm">
+            <div class="field">
+              <label for="revName">Your name</label>
+              <input id="revName" type="text" placeholder="First name or full name" required maxlength="60">
+            </div>
+            <div class="field">
+              <label>Rating</label>
+              <div class="star-picker" id="starPicker" role="radiogroup" aria-label="Star rating">
+                <button type="button" data-value="1" aria-label="1 star">&#9733;</button>
+                <button type="button" data-value="2" aria-label="2 stars">&#9733;</button>
+                <button type="button" data-value="3" aria-label="3 stars">&#9733;</button>
+                <button type="button" data-value="4" aria-label="4 stars">&#9733;</button>
+                <button type="button" data-value="5" aria-label="5 stars">&#9733;</button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="revComment">Your review</label>
+              <textarea id="revComment" placeholder="How did it go?" required maxlength="600"></textarea>
+            </div>
+            <button class="btn-primary" type="submit" style="border:none; cursor:pointer;">Submit review</button>
+            <p class="review-status" id="reviewStatus" style="margin-top:14px;"></p>
+          </form>
+        </div>
+
+        <!-- Existing reviews -->
+        <div>
+          <div class="review-list" id="reviewList">
+            <p class="review-empty">Loading reviews&hellip;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
@@ -650,6 +827,7 @@
         <nav class="foot-links">
           <a href="about.html">About Oksana</a>
           <a href="services.html">Services</a>
+          <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -704,5 +882,142 @@
     });
   });
 </script>
+
+<!-- ====================== REVIEWS: Supabase-backed, no hardcoding ======================
+     Fill in these two values after you create your free Supabase project (steps below).
+     They are meant to be public — the anon key only allows what your table policies allow. -->
+<script>
+  const SUPABASE_URL = "https://xpurbliwokpqqxszqcem.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_bdGHmUmJ11QKfacUKDlLgw_DbrbmsZS";
+
+  const reviewList   = document.getElementById('reviewList');
+  const reviewForm   = document.getElementById('reviewForm');
+  const reviewStatus = document.getElementById('reviewStatus');
+  const starPicker   = document.getElementById('starPicker');
+  const starButtons  = Array.from(starPicker.querySelectorAll('button'));
+  let selectedRating = 0;
+
+  starButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedRating = parseInt(btn.dataset.value, 10);
+      starButtons.forEach(b => {
+        b.classList.toggle('filled', parseInt(b.dataset.value, 10) <= selectedRating);
+      });
+    });
+  });
+
+  function starsHtml(rating) {
+    const full = '★'.repeat(rating);
+    const empty = '☆'.repeat(5 - rating);
+    return full + empty;
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function renderReviews(reviews) {
+    if (!reviews || reviews.length === 0) {
+      reviewList.innerHTML = '<p class="review-empty">No reviews yet — be the first to leave one!</p>';
+      return;
+    }
+    reviewList.innerHTML = reviews.map(r => {
+      const date = new Date(r.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      const initial = (r.name || '?').trim().charAt(0).toUpperCase();
+      return `
+        <div class="review-card">
+          <div class="stars">${starsHtml(r.rating)}</div>
+          <div class="r-top">
+            <div class="r-avatar">${initial}</div>
+            <div>
+              <span class="r-name">${escapeHtml(r.name)}</span>
+              <span class="r-date">${date}</span>
+            </div>
+          </div>
+          <p class="r-comment">${escapeHtml(r.comment)}</p>
+        </div>`;
+    }).join('');
+  }
+
+  async function loadReviews() {
+    if (SUPABASE_URL.includes('PASTE_YOUR')) {
+      reviewList.innerHTML = '<p class="review-empty">Reviews aren\'t connected yet — see setup steps.</p>';
+      return;
+    }
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/rest/v1/reviews?select=name,rating,comment,created_at&order=created_at.desc`,
+        {
+          headers: {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`
+          }
+        }
+      );
+      if (!res.ok) throw new Error('Failed to load reviews');
+      const data = await res.json();
+      renderReviews(data);
+    } catch (err) {
+      reviewList.innerHTML = '<p class="review-empty">Couldn\'t load reviews right now.</p>';
+      console.error(err);
+    }
+  }
+
+  reviewForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    reviewStatus.textContent = '';
+    reviewStatus.className = 'review-status';
+
+    const name = document.getElementById('revName').value.trim();
+    const comment = document.getElementById('revComment').value.trim();
+
+    if (!name || !comment || selectedRating === 0) {
+      reviewStatus.textContent = 'Please add your name, a star rating, and a review.';
+      reviewStatus.className = 'review-status error';
+      return;
+    }
+
+    if (SUPABASE_URL.includes('PASTE_YOUR')) {
+      reviewStatus.textContent = 'Reviews aren\'t connected yet — see setup steps.';
+      reviewStatus.className = 'review-status error';
+      return;
+    }
+
+    const submitBtn = reviewForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/reviews`, {
+        method: 'POST',
+        headers: {
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+          Prefer: 'return=representation'
+        },
+        body: JSON.stringify({ name, rating: selectedRating, comment })
+      });
+      if (!res.ok) throw new Error('Failed to submit review');
+
+      reviewStatus.textContent = 'Thanks for your review!';
+      reviewStatus.className = 'review-status success';
+      reviewForm.reset();
+      selectedRating = 0;
+      starButtons.forEach(b => b.classList.remove('filled'));
+      loadReviews();
+    } catch (err) {
+      reviewStatus.textContent = 'Something went wrong submitting your review. Please try again.';
+      reviewStatus.className = 'review-status error';
+      console.error(err);
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  loadReviews();
+</script>
+
 </body>
 </html>
