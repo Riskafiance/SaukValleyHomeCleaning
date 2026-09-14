@@ -67,7 +67,13 @@
     display:flex; align-items:center; gap:10px;
     text-decoration:none;
   }
-  .brand-mark{width:34px;height:34px;flex-shrink:0;}
+  .brand-mark{
+    width:auto;
+    height:40px;
+    max-width:150px;
+    object-fit:contain;
+    flex-shrink:0;
+  }
   .brand-name{
     font-family:'Fraunces', serif;
     font-weight:600;
@@ -403,10 +409,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 6L42 20H30V38H18V20H6L24 6Z" fill="#0F2A4A"/>
-        <path d="M8 30C16 34 32 34 40 30" stroke="#3E8FD9" stroke-width="3" stroke-linecap="round"/>
-      </svg>
+      <img class="brand-mark" src="logo.PNG" alt="Sauk Valley Home Cleaning Logo">
       <span class="brand-name">Sauk Valley<span>Home Cleaning</span></span>
     </a>
 
