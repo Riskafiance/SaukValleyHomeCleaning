@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
+  :root {
     --navy: #0F2A4A;
     --navy-deep: #0A1D34;
     --navy-mid: #17456F;
@@ -21,324 +21,332 @@
     --ink-soft: #4C5D71;
     --line: rgba(15,42,74,0.14);
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Work Sans', sans-serif;
-    font-size:17px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  h1,h2,h3,h4{
-    font-family:'Fraunces', serif;
-    color:var(--navy-deep);
-    margin:0;
-    font-weight:600;
-    letter-spacing:-0.01em;
+  h1,h2,h3,h4 {
+    font-family: 'Fraunces', serif;
+    color: var(--navy-deep);
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
-  a{color:inherit;}
-  .script{
-    font-family:'Caveat', cursive;
-    color:var(--sky);
-    font-weight:600;
+  a { color: inherit; }
+  .script {
+    font-family: 'Caveat', cursive;
+    color: var(--sky);
+    font-weight: 600;
   }
-  .wrap{
-    max-width:1120px;
-    margin:0 auto;
-    padding:0 32px;
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
   }
 
   /* ---------- header ---------- */
-  header{
-    position:sticky; top:0; z-index:100;
-    background:rgba(251,250,246,0.95);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(251,250,246,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
   }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 0;
-    position:relative;
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 0;
+    position: relative;
   }
-  .brand{
-    display:flex; align-items:center; gap:10px;
-    text-decoration:none;
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
   }
-  .brand-mark{width:34px;height:34px;flex-shrink:0;}
-  .brand-name{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:1.18rem;
-    color:var(--navy-deep);
-    line-height:1.1;
+  .brand-logo {
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
-  .brand-name span{
-    display:block;
-    font-family:'Caveat', cursive;
-    font-size:1rem;
-    color:var(--sky);
-    font-weight:600;
+  .brand-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.18rem;
+    color: var(--navy-deep);
+    line-height: 1.1;
   }
-  .nav-right{
-    display:flex; align-items:center; gap:20px;
+  .brand-name span {
+    display: block;
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: var(--sky);
+    font-weight: 600;
   }
-  .nav-links{display:flex; align-items:center; gap:28px;}
-  .nav-links a{
-    text-decoration:none; color:var(--ink-soft);
-    font-size:0.95rem; font-weight:500;
-    transition:color 0.2s ease;
+  .nav-right {
+    display: flex; align-items: center; gap: 20px;
   }
-  .nav-links a:hover, .nav-links a.active-link{color:var(--navy); font-weight:600;}
-  .call-pill{
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--navy-deep); color:#fff;
-    padding:10px 18px; border-radius:999px;
-    text-decoration:none; font-weight:500; font-size:0.92rem;
-    white-space:nowrap;
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a {
+    text-decoration: none; color: var(--ink-soft);
+    font-size: 0.95rem; font-weight: 500;
+    transition: color 0.2s ease;
   }
-  .call-pill:hover{background:var(--navy-mid);}
+  .nav-links a:hover, .nav-links a.active-link { color: var(--navy); font-weight: 600; }
+  .call-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--navy-deep); color: #fff;
+    padding: 10px 18px; border-radius: 999px;
+    text-decoration: none; font-weight: 500; font-size: 0.92rem;
+    white-space: nowrap;
+  }
+  .call-pill:hover { background: var(--navy-mid); }
 
   /* ---------- hamburger button ---------- */
-  .menu-toggle{
-    display:none;
-    background:transparent;
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:8px 10px;
-    cursor:pointer;
-    color:var(--navy-deep);
-    align-items:center;
-    justify-content:center;
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: var(--navy-deep);
+    align-items: center;
+    justify-content: center;
   }
-  .menu-toggle svg{width:22px; height:22px;}
+  .menu-toggle svg { width: 22px; height: 22px; }
 
   /* Mobile Dropdown Styling */
-  @media(max-width:760px){
-    .menu-toggle{display:flex;}
+  @media(max-width: 760px) {
+    .menu-toggle { display: flex; }
     
-    .nav-links{
-      display:none;
-      position:absolute;
-      top:100%;
-      left:0;
-      right:0;
-      background:var(--cream);
-      flex-direction:column;
-      align-items:stretch;
-      padding:20px 24px 28px;
-      gap:0;
-      border-bottom:1px solid var(--line);
-      box-shadow:0 12px 24px rgba(15,42,74,0.08);
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      flex-direction: column;
+      align-items: stretch;
+      padding: 20px 24px 28px;
+      gap: 0;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 12px 24px rgba(15,42,74,0.08);
     }
     
-    .nav-links.active{display:flex;}
+    .nav-links.active { display: flex; }
 
-    .nav-links a{
-      padding:14px 0;
-      font-size:1.1rem;
-      font-weight:600;
-      color:var(--navy-deep);
-      border-bottom:1px solid rgba(15,42,74,0.08);
+    .nav-links a {
+      padding: 14px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      border-bottom: 1px solid rgba(15,42,74,0.08);
     }
-    .nav-links a:last-child{border-bottom:none;}
+    .nav-links a:last-child { border-bottom: none; }
   }
 
   /* ---------- hero ---------- */
-  .hero-page{
-    position:relative;
-    padding:64px 0 40px;
-    background:linear-gradient(180deg, var(--pale) 0%, var(--cream) 100%);
-    border-bottom:1px solid var(--line);
+  .hero-page {
+    position: relative;
+    padding: 64px 0 40px;
+    background: linear-gradient(180deg, var(--pale) 0%, var(--cream) 100%);
+    border-bottom: 1px solid var(--line);
   }
-  .eyebrow-line{
-    display:flex; align-items:center; gap:10px;
-    color:var(--ink-soft); font-size:0.98rem; margin-bottom:16px;
+  .eyebrow-line {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--ink-soft); font-size: 0.98rem; margin-bottom: 16px;
   }
-  .eyebrow-line svg{width:16px;height:16px;flex-shrink:0;color:var(--sky);}
-  .hero-page h1{
-    font-size:clamp(2.3rem, 4.5vw, 3.4rem);
-    line-height:1.12;
-    max-width:22ch;
+  .eyebrow-line svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--sky); }
+  .hero-page h1 {
+    font-size: clamp(2.3rem, 4.5vw, 3.4rem);
+    line-height: 1.12;
+    max-width: 22ch;
   }
-  .hero-page h1 em{
-    font-style:normal;
-    color:var(--sky);
+  .hero-page h1 em {
+    font-style: normal;
+    color: var(--sky);
   }
-  .hero-page p.lead{
-    margin:20px 0 0;
-    max-width:58ch;
-    color:var(--ink-soft);
-    font-size:1.1rem;
+  .hero-page p.lead {
+    margin: 20px 0 0;
+    max-width: 58ch;
+    color: var(--ink-soft);
+    font-size: 1.1rem;
   }
 
   /* ---------- section shell ---------- */
-  section{padding:84px 0;}
-  .section-head{max-width:60ch; margin-bottom:52px;}
-  .section-head .tag{
-    font-family:'Caveat', cursive;
-    color:var(--sky); font-size:1.3rem; font-weight:600;
-    display:block; margin-bottom:4px;
+  section { padding: 84px 0; }
+  .section-head { max-width: 60ch; margin-bottom: 52px; }
+  .section-head .tag {
+    font-family: 'Caveat', cursive;
+    color: var(--sky); font-size: 1.3rem; font-weight: 600;
+    display: block; margin-bottom: 4px;
   }
-  .section-head h2{font-size:clamp(1.8rem,3vw,2.4rem);}
-  .section-head p{color:var(--ink-soft); margin-top:14px;}
+  .section-head h2 { font-size: clamp(1.8rem,3vw,2.4rem); }
+  .section-head p { color: var(--ink-soft); margin-top: 14px; }
 
   /* ---------- story grid ---------- */
-  .story-grid{
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px;
-    align-items:center;
+  .story-grid {
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px;
+    align-items: center;
   }
-  @media(max-width:860px){ .story-grid{grid-template-columns:1fr; gap:40px;} }
+  @media(max-width: 860px) { .story-grid { grid-template-columns: 1fr; gap: 40px; } }
   
-  .story-text h2{font-size:clamp(1.8rem, 3vw, 2.4rem); margin-bottom:20px;}
-  .story-text p{color:var(--ink-soft); margin-bottom:18px; font-size:1.05rem;}
-  .story-text p strong{color:var(--navy-deep);}
+  .story-text h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 20px; }
+  .story-text p { color: var(--ink-soft); margin-bottom: 18px; font-size: 1.05rem; }
+  .story-text p strong { color: var(--navy-deep); }
 
-  .story-card{
-    background:#fff;
-    border:1px solid var(--line);
-    border-radius:24px;
-    padding:40px 36px;
-    box-shadow:0 12px 32px rgba(15,42,74,0.05);
-    position:relative;
+  .story-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 40px 36px;
+    box-shadow: 0 12px 32px rgba(15,42,74,0.05);
+    position: relative;
+    margin: 0;
   }
-  .story-card::before{
-    content:'“';
-    font-family:'Fraunces', serif;
-    font-size:7rem;
-    color:var(--sky-light);
-    opacity:0.3;
-    position:absolute;
-    top:-10px; left:24px;
-    line-height:1;
+  .story-card::before {
+    content: '“';
+    font-family: 'Fraunces', serif;
+    font-size: 7rem;
+    color: var(--sky-light);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px; left: 24px;
+    line-height: 1;
   }
-  .story-card blockquote{
-    margin:0;
-    font-family:'Fraunces', serif;
-    font-size:1.25rem;
-    color:var(--navy-deep);
-    line-height:1.45;
-    position:relative;
-    z-index:1;
+  .story-card blockquote {
+    margin: 0;
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    color: var(--navy-deep);
+    line-height: 1.45;
+    position: relative;
+    z-index: 1;
   }
-  .story-card .author{
-    margin-top:24px;
-    display:flex;
-    align-items:center;
-    gap:14px;
+  .story-card figcaption {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
-  .avatar-circle{
-    width:50px; height:50px;
-    border-radius:50%;
-    background:var(--navy);
-    color:#fff;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces', serif;
-    font-weight:600; font-size:1.2rem;
+  .avatar-circle {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600; font-size: 1.2rem;
   }
-  .author-info h4{font-size:1.05rem; margin-bottom:2px;}
-  .author-info span{font-size:0.88rem; color:var(--ink-soft);}
+  .author-info h4 { font-size: 1.05rem; margin-bottom: 2px; }
+  .author-info span { font-size: 0.88rem; color: var(--ink-soft); }
 
   /* ---------- values section ---------- */
-  .values-section{background:var(--pale);}
-  .values-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:28px;
+  .values-section { background: var(--pale); }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
   }
-  .value-card{
-    background:#fff;
-    border-radius:18px;
-    padding:32px 28px;
-    border:1px solid rgba(15,42,74,0.08);
+  .value-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 32px 28px;
+    border: 1px solid rgba(15,42,74,0.08);
   }
-  .value-icon{
-    width:56px; height:56px; border-radius:14px;
-    background:var(--pale); color:var(--sky);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:20px;
+  .value-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: var(--pale); color: var(--sky);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
   }
-  .value-icon svg{width:28px; height:28px;}
-  .value-card h3{font-size:1.25rem; margin-bottom:10px;}
-  .value-card p{color:var(--ink-soft); font-size:0.98rem; margin:0;}
+  .value-icon svg { width: 28px; height: 28px; }
+  .value-card h3 { font-size: 1.25rem; margin-bottom: 10px; }
+  .value-card p { color: var(--ink-soft); font-size: 0.98rem; margin: 0; }
 
   /* ---------- service area banner ---------- */
-  .area-banner{
-    background:var(--navy);
-    color:#fff;
-    border-radius:24px;
-    padding:52px 40px;
-    display:grid;
-    grid-template-columns:1fr auto;
-    align-items:center;
-    gap:36px;
+  .area-banner {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 24px;
+    padding: 52px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 36px;
   }
-  @media(max-width:760px){ .area-banner{grid-template-columns:1fr; text-align:left;} }
-  .area-banner h2{color:#fff; font-size:clamp(1.7rem,3vw,2.2rem); margin-bottom:10px;}
-  .area-banner p{color:#CBE0F5; margin:0; max-width:50ch;}
-  .btn-light{
-    display:inline-flex; align-items:center; gap:10px;
-    background:#fff; color:var(--navy-deep);
-    padding:14px 26px; border-radius:10px;
-    text-decoration:none; font-weight:600; font-size:1rem;
-    white-space:nowrap;
-    transition:background 0.2s;
+  @media(max-width: 760px) { .area-banner { grid-template-columns: 1fr; text-align: left; } }
+  .area-banner h2 { color: #fff; font-size: clamp(1.7rem,3vw,2.2rem); margin-bottom: 10px; }
+  .area-banner p { color: #CBE0F5; margin: 0; max-width: 50ch; }
+  .btn-light {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #fff; color: var(--navy-deep);
+    padding: 14px 26px; border-radius: 10px;
+    text-decoration: none; font-weight: 600; font-size: 1rem;
+    white-space: nowrap;
+    transition: background 0.2s;
   }
-  .btn-light:hover{background:var(--pale);}
+  .btn-light:hover { background: var(--pale); }
 
   /* ---------- button primary ---------- */
-  .btn-primary{
-    display:inline-flex; align-items:center; gap:10px;
-    background:var(--sky); color:#fff;
-    padding:14px 26px; border-radius:10px;
-    text-decoration:none; font-weight:600; font-size:1rem;
-    box-shadow:0 10px 24px -8px rgba(62,143,217,0.55);
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--sky); color: #fff;
+    padding: 14px 26px; border-radius: 10px;
+    text-decoration: none; font-weight: 600; font-size: 1rem;
+    box-shadow: 0 10px 24px -8px rgba(62,143,217,0.55);
   }
-  .btn-primary:hover{background:var(--navy-mid);}
+  .btn-primary:hover { background: var(--navy-mid); }
 
   /* ---------- contact preview ---------- */
-  .contact-simple{
-    text-align:center;
-    max-width:600px;
-    margin:0 auto;
+  .contact-simple {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
   }
-  .contact-simple h2{font-size:clamp(2rem, 3.5vw, 2.6rem); margin-bottom:16px;}
-  .contact-simple p{color:var(--ink-soft); font-size:1.1rem; margin-bottom:32px;}
-  .contact-cta-group{
-    display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap;
+  .contact-simple h2 { font-size: clamp(2rem, 3.5vw, 2.6rem); margin-bottom: 16px; }
+  .contact-simple p { color: var(--ink-soft); font-size: 1.1rem; margin-bottom: 32px; }
+  .contact-cta-group {
+    display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;
   }
 
   /* ---------- footer ---------- */
-  footer{
-    background:var(--navy-deep); color:#CBE0F5;
-    padding:52px 0 30px;
+  footer {
+    background: var(--navy-deep); color: #CBE0F5;
+    padding: 52px 0 30px;
   }
-  .footer-grid{
-    display:flex; justify-content:space-between; align-items:flex-start;
-    flex-wrap:wrap; gap:30px;
-    padding-bottom:30px; border-bottom:1px solid rgba(255,255,255,0.12);
+  .footer-grid {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 30px;
+    padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.12);
   }
-  footer .brand-name{color:#fff;}
-  footer .foot-note{color:#9FC3E6; font-size:0.92rem; max-width:34ch; margin-top:10px;}
-  footer nav.foot-links{display:flex; gap:20px; margin-top:14px;}
-  footer nav.foot-links a{color:#9FC3E6; text-decoration:none; font-size:0.92rem;}
-  footer nav.foot-links a:hover{color:#fff;}
-  .foot-bottom{
-    padding-top:22px; display:flex; justify-content:space-between;
-    flex-wrap:wrap; gap:10px;
-    font-size:0.85rem; color:#7FA7CC;
+  footer .brand-name { color: #fff; }
+  footer .foot-note { color: #9FC3E6; font-size: 0.92rem; max-width: 34ch; margin-top: 10px; }
+  footer nav.foot-links { display: flex; gap: 20px; margin-top: 14px; }
+  footer nav.foot-links a { color: #9FC3E6; text-decoration: none; font-size: 0.92rem; }
+  footer nav.foot-links a:hover { color: #fff; }
+  .foot-bottom {
+    padding-top: 22px; display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 10px;
+    font-size: 0.85rem; color: #7FA7CC;
   }
 
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
 
   /* Mobile Adjustments */
   @media (max-width: 640px) {
     .wrap { padding: 0 20px; }
     section { padding: 56px 0; }
+    .brand-logo { height: 34px; }
     .brand-name { font-size: 1.05rem; }
     .brand-name span { font-size: 0.95rem; }
     .call-pill { padding: 10px 14px; font-size: 0.9rem; }
@@ -364,22 +372,20 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 6L42 20H30V38H18V20H6L24 6Z" fill="#0F2A4A"/>
-        <path d="M8 30C16 34 32 34 40 30" stroke="#3E8FD9" stroke-width="3" stroke-linecap="round"/>
-      </svg>
+      <!-- Replace 'logo.png' with your actual logo file path -->
+      <img src="logo.png" alt="Sauk Valley Home Cleaning Logo" class="brand-logo">
       <span class="brand-name">Sauk Valley<span>Home Cleaning</span></span>
     </a>
 
     <div class="nav-right">
       <a class="call-pill" href="tel:7798613004">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
         <span class="phone-text">779 861 3004</span>
       </a>
 
       <!-- Hamburger Button -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
-        <svg id="hamburgerIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navLinks">
+        <svg id="hamburgerIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -391,7 +397,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="about.html" class="active-link">About</a>
+      <a href="about.html" class="active-link" aria-current="page">About</a>
       <a href="index.html#contact">Contact</a>
     </nav>
   </div>
@@ -403,7 +409,7 @@
   <section class="hero-page">
     <div class="wrap">
       <div class="eyebrow-line">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 20h20L12 2z" stroke="currentColor" stroke-width="0"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         About Sauk Valley Home Cleaning LLC
       </div>
       <h1>Dedicated to bringing <em>care &amp; comfort</em> to local homes.</h1>
@@ -423,18 +429,16 @@
           <p>We keep things straightforward with clear communication, reliable scheduling, and transparent pricing — with no hidden fees or restrictive long-term contracts.</p>
         </div>
         <div>
-          <div class="story-card">
-            <caption>
-              <blockquote>"When someone trusts us with their home, we take that responsibility seriously. Our goal is to make your life easier and your home a place of total comfort."</blockquote>
-            </caption>
-            <div class="author">
+          <figure class="story-card">
+            <blockquote>"When someone trusts us with their home, we take that responsibility seriously. Our goal is to make your life easier and your home a place of total comfort."</blockquote>
+            <figcaption class="author">
               <div class="avatar-circle">OY</div>
               <div class="author-info">
                 <h4>Oksana Yabkovska</h4>
                 <span>Owner &amp; Operator</span>
               </div>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -452,7 +456,7 @@
       <div class="values-grid">
         <div class="value-card">
           <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Trust &amp; Integrity</h3>
           <p>You can count on punctual service and honest communication every single time. Respect for your personal space is our highest priority.</p>
@@ -460,7 +464,7 @@
 
         <div class="value-card">
           <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Thorough Attention</h3>
           <p>We don't cut corners. From kitchen counter grease to bathroom tiles and floor corners, we pay attention to the details that count.</p>
@@ -468,7 +472,7 @@
 
         <div class="value-card">
           <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
           <h3>Flexible Plans</h3>
           <p>Every house is different. Choose one-time deep cleaning or ongoing visits scheduled daily, weekly, or bi-weekly according to your schedule.</p>
@@ -487,7 +491,7 @@
         </div>
         <div>
           <a class="btn-light" href="tel:7798613004">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
             Call 779 861 3004
           </a>
         </div>
@@ -504,7 +508,7 @@
         <p>Give Oksana a call or text for a quick, hassle-free quote tailored to your home’s exact needs.</p>
         <div class="contact-cta-group">
           <a class="btn-primary" href="tel:7798613004">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
             Call or text 779 861 3004
           </a>
           <a class="btn-primary" href="mailto:abkovskaoksana@gmail.com" style="background:var(--navy-deep); box-shadow:none;">
@@ -530,7 +534,7 @@
         </nav>
       </div>
       <div>
-        <div class="v" style="color:#fff; font-family:'Fraunces',serif; margin-bottom:8px;">779 861 3004</div>
+        <div style="color:#fff; font-family:'Fraunces',serif; margin-bottom:8px;">779 861 3004</div>
         <div style="color:#9FC3E6;">abkovskaoksana@gmail.com</div>
       </div>
     </div>
@@ -550,10 +554,10 @@
   const navLinks = document.getElementById('navLinks');
   const hamburgerIcon = document.getElementById('hamburgerIcon');
 
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('active');
-    
-    // Switch SVG icon between Hamburger and X
+  function updateMenuState(isOpen) {
+    navLinks.classList.toggle('active', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen);
+
     if (isOpen) {
       hamburgerIcon.innerHTML = `
         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -566,17 +570,17 @@
         <line x1="3" y1="18" x2="21" y2="18"></line>
       `;
     }
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = !navLinks.classList.contains('active');
+    updateMenuState(isOpen);
   });
 
   // Close menu when a navigation link is clicked
   document.querySelectorAll('#navLinks a').forEach(link => {
     link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      hamburgerIcon.innerHTML = `
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      `;
+      updateMenuState(false);
     });
   });
 </script>
