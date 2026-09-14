@@ -53,14 +53,15 @@
 
   /* ---------- header ---------- */
   header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(251,250,246,0.92);
-    backdrop-filter:blur(6px);
+    position:sticky; top:0; z-index:100;
+    background:rgba(251,250,246,0.95);
+    backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
   .nav{
     display:flex; align-items:center; justify-content:space-between;
     padding:16px 0;
+    position:relative;
   }
   .brand{
     display:flex; align-items:center; gap:10px;
@@ -81,10 +82,14 @@
     color:var(--sky);
     font-weight:600;
   }
+  .nav-right{
+    display:flex; align-items:center; gap:20px;
+  }
   .nav-links{display:flex; align-items:center; gap:28px;}
   .nav-links a{
     text-decoration:none; color:var(--ink-soft);
     font-size:0.95rem; font-weight:500;
+    transition:color 0.2s ease;
   }
   .nav-links a:hover{color:var(--navy);}
   .call-pill{
@@ -95,8 +100,51 @@
     white-space:nowrap;
   }
   .call-pill:hover{background:var(--navy-mid);}
-  .nav-mobile-hide{display:flex; gap:28px;}
-  @media(max-width:760px){ .nav-mobile-hide{display:none;} }
+
+  /* ---------- hamburger button ---------- */
+  .menu-toggle{
+    display:none;
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:8px 10px;
+    cursor:pointer;
+    color:var(--navy-deep);
+    align-items:center;
+    justify-content:center;
+  }
+  .menu-toggle svg{width:22px; height:22px;}
+
+  /* Mobile Dropdown Styling */
+  @media(max-width:760px){
+    .menu-toggle{display:flex;}
+    
+    .nav-links{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:var(--cream);
+      flex-direction:column;
+      align-items:stretch;
+      padding:20px 24px 28px;
+      gap:0;
+      border-bottom:1px solid var(--line);
+      box-shadow:0 12px 24px rgba(15,42,74,0.08);
+    }
+    
+    .nav-links.active{display:flex;}
+
+    .nav-links a{
+      padding:14px 0;
+      font-size:1.1rem;
+      font-weight:600;
+      color:var(--navy-deep);
+      border-bottom:1px solid rgba(15,42,74,0.08);
+    }
+    .nav-links a:last-child{border-bottom:none;}
+  }
 
   /* ---------- hero ---------- */
   .hero{
@@ -303,20 +351,14 @@
     html{scroll-behavior:auto;}
   }
 
-  /* ========================================= */
-  /* --- MOBILE OPTIMIZATION & REFINEMENTS --- */
-  /* ========================================= */
+  /* Mobile Adjustments */
   @media (max-width: 640px) {
-    /* Global spacing */
     .wrap { padding: 0 20px; }
     section { padding: 56px 0; }
-    
-    /* Header */
     .brand-name { font-size: 1.05rem; }
     .brand-name span { font-size: 0.95rem; }
     .call-pill { padding: 10px 14px; font-size: 0.9rem; }
     
-    /* Hero */
     .hero { padding-top: 32px; }
     .hero h1 { font-size: clamp(2.2rem, 9vw, 2.6rem); }
     .hero p.lead { font-size: 1rem; margin: 18px 0 24px; }
@@ -325,10 +367,8 @@
     .phone-inline { align-items: center; margin-top: 8px; }
     .hero-wave { height: 60px; }
     
-    /* Section Headings */
     .section-head { margin-bottom: 36px; }
     
-    /* Services */
     .service-row { 
       grid-template-columns: 64px 1fr; 
       gap: 16px; 
@@ -336,24 +376,19 @@
     }
     .service-icon { width: 64px; height: 64px; }
     
-    /* Quote Band */
     .quote-band .wrap { gap: 40px; }
     .quote-band .stat-row { flex-direction: column; gap: 16px; }
     
-    /* Contact Form & Cards */
     .contact-wrap { gap: 40px; }
     .contact-card { padding: 24px; }
-    /* Force form inputs to 16px min to prevent iOS auto-zoom */
     .quote-form input, .quote-form select, .quote-form textarea { font-size: 16px; }
     
-    /* Footer */
     .footer-grid { flex-direction: column; gap: 32px; }
     .foot-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
 
-  /* Extra small screens (iPhone SE, small Androids) */
   @media (max-width: 400px) {
-    .call-pill .phone-text { display: none; } /* Hide number to prevent squishing the logo */
+    .call-pill .phone-text { display: none; }
     .brand-name { font-size: 1rem; }
     .service-row { 
       grid-template-columns: 1fr; 
@@ -374,16 +409,28 @@
       </svg>
       <span class="brand-name">Sauk Valley Area<span>Home Cleaning</span></span>
     </a>
-    <nav class="nav-links">
-      <span class="nav-mobile-hide">
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="#contact">Contact</a>
-      </span>
+
+    <div class="nav-right">
       <a class="call-pill" href="tel:7798613004">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1.1L6.6 10.8z" fill="currentColor"/></svg>
         <span class="phone-text">779 861 3004</span>
       </a>
+
+      <!-- Hamburger Button -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+        <svg id="hamburgerIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" id="navLinks">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -579,6 +626,44 @@
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+  // Set current year in footer
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Mobile Hamburger Toggle Logic
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('active');
+    
+    // Switch SVG icon between Hamburger and X
+    if (isOpen) {
+      hamburgerIcon.innerHTML = `
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      `;
+    } else {
+      hamburgerIcon.innerHTML = `
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      `;
+    }
+  });
+
+  // Close menu when a navigation link is clicked
+  document.querySelectorAll('#navLinks a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      hamburgerIcon.innerHTML = `
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      `;
+    });
+  });
+</script>
 </body>
 </html>
