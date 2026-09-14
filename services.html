@@ -65,10 +65,16 @@
     position:relative;
   }
   .brand{
-    display:flex; align-items:center; gap:10px;
+    display:flex; align-items:center; gap:12px;
     text-decoration:none;
   }
-  .brand-mark{width:34px;height:34px;flex-shrink:0;}
+  .brand-logo{
+    height:40px;
+    width:auto;
+    max-width:160px;
+    object-fit:contain;
+    flex-shrink:0;
+  }
   .brand-name{
     font-family:'Fraunces', serif;
     font-weight:600;
@@ -308,33 +314,28 @@
   /* --- MOBILE OPTIMIZATION & REFINEMENTS --- */
   /* ========================================= */
   @media (max-width: 640px) {
-    /* Global spacing */
     .wrap { padding: 0 20px; }
     section { padding: 56px 0; }
     
-    /* Header */
+    .brand-logo { height: 34px; }
     .brand-name { font-size: 1.05rem; }
     .brand-name span { font-size: 0.95rem; }
     .call-pill { padding: 10px 14px; font-size: 0.9rem; }
     
-    /* Hero */
     .page-hero { padding-top: 32px; }
     .page-hero .inner { padding-bottom: 24px; }
     .page-hero h1 { font-size: clamp(2rem, 9vw, 2.4rem); }
     .page-hero p.lead { font-size: 1rem; margin: 18px 0 24px; }
     .hero-wave { height: 60px; }
     
-    /* Service Details */
     .service-block { padding: 40px 0; gap: 24px; }
     .service-icon-lg { width: 56px; height: 56px; margin-bottom: 12px; }
     .service-icon-lg svg { width: 24px; height: 24px; }
     .includes { grid-template-columns: 1fr; gap: 14px; }
 
-    /* How It Works */
     .how .section-head { margin-bottom: 32px; }
     .step-row { gap: 16px; padding: 20px 0; grid-template-columns: 32px 1fr; }
     
-    /* CTA Band */
     .cta-band { 
       padding: 32px 24px; 
       flex-direction: column; 
@@ -345,13 +346,11 @@
     .cta-band h2 { max-width: 100%; }
     .btn-primary { justify-content: center; width: 100%; }
     
-    /* Footer */
     .footer-grid { flex-direction: column; gap: 32px; }
     .foot-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
     footer nav.foot-links { flex-wrap: wrap; gap: 16px; }
   }
 
-  /* Extra small screens */
   @media (max-width: 440px) {
     .nav-call-desktop { display: none; }
     .brand-name { font-size: 1rem; }
@@ -363,10 +362,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 6L42 20H30V38H18V20H6L24 6Z" fill="#0F2A4A"/>
-        <path d="M8 30C16 34 32 34 40 30" stroke="#3E8FD9" stroke-width="3" stroke-linecap="round"/>
-      </svg>
+      <img src="logo.png" alt="Sauk Valley Home Cleaning Logo" class="brand-logo">
       <span class="brand-name">Sauk Valley<span>Home Cleaning</span></span>
     </a>
 
